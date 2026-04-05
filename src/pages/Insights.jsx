@@ -276,7 +276,7 @@ const CustomTooltip = ({ active, payload, label }) => {
    MAIN INSIGHTS COMPONENT
    ═══════════════════════════════════════════════════════════════════════════════ */
 export default function Insights() {
-  const { getSummary, getInsights } = useStore();
+  const { getSummary, getInsights, setActivePage } = useStore();
   const summary = getSummary();
   const insights = getInsights();
 
@@ -348,6 +348,7 @@ export default function Insights() {
             </div>
 
             <motion.button
+              onClick={() => setActivePage('transactions')}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               className="flex-shrink-0 group/btn flex items-center gap-2 px-5 py-3 rounded-xl

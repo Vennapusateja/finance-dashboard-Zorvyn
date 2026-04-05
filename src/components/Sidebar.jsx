@@ -134,9 +134,11 @@ function NavButton({ item, isActive, sidebarOpen, onClick }) {
 
 // ─── Bottom Utility Button ───────────────────────────────────────────────────
 function BottomButton({ item, sidebarOpen }) {
+  const { addToast } = useStore();
   const Icon = item.icon;
   return (
     <button
+      onClick={() => addToast(`🚀 ${item.label} feature is coming soon!`, 'info')}
       className={`
         group relative w-full flex items-center gap-3 rounded-xl
         transition-colors duration-200
